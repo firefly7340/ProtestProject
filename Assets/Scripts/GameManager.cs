@@ -5,6 +5,9 @@ public class GameManager : MonoBehaviour {
 
     public float maxFieldValue = 5.0f;
 
+    //public UIManager uiManager;
+
+    private UIManager uiManager;
     private float publicPerceptionValue;
     private float situationValue;
     private float cityStatusValue;
@@ -14,12 +17,23 @@ public class GameManager : MonoBehaviour {
         publicPerceptionValue = 0.0f;
         situationValue = 0.0f;
         cityStatusValue = 1.0f;
+
+        uiManager = this.GetComponent<UIManager>();
+
+        //open up initial newspaper with officer assign screen behind
+        
+        uiManager.setOfficerAssignActive(true);
+        //uiManager.setNewspaperActive(true);
+        uiManager.setNewspaperActive(true);
     }
 	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+	//public function for when player is finished with officer assignments
+    public void startDay()
+    {
+        print("starting the day");
+
+        uiManager.closeUI();
+    }
 
     public float getPublicPerceptionValue()
     {

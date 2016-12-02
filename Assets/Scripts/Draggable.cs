@@ -21,16 +21,16 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
 
     public void OnDrag(PointerEventData eventData)
     {
-        
         //can keep track of starting mouse offset to make sure that the picture doesn't do that jump thing
         this.transform.position = eventData.position;
-
+        
     }
 
     public void OnEndDrag(PointerEventData eventData)
     {
         // throw new NotImplementedException();
-        this.transform.parent = parentToReturnTo;
+        //this.transform.parent = parentToReturnTo;
+        this.transform.SetParent(parentToReturnTo);
 
         GetComponent<CanvasGroup>().blocksRaycasts = true;
     }

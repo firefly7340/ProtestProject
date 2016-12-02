@@ -8,36 +8,25 @@ public class ReactToClick : MonoBehaviour {
 
     public UIManager uiManager;
 
-
-	// Use this for initialization
-	void Start () {
-
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	    
-	}
-
     void OnMouseDown()
     {
-        print("Box Clicked!");
+        //print("Box Clicked!");
 
         //display newspaper UI with button to close
 
         switch (mType)
         {
             case ObjectType.Cell:
-                uiManager.setCellphoneActive(true);
+                uiManager.activateCellphone();
                 break;
             case ObjectType.Twitter:
-                uiManager.setTwitterActive(true);
+                uiManager.activateTwitter();
                 break;
             case ObjectType.Landline:
-                uiManager.setLandlineActive(true);
+                uiManager.activateLandline();
                 break;
             case ObjectType.Newspaper:
-                uiManager.setNewspaperActive(true);
+                uiManager.activateNewspaper();
                 break;
         }
 
