@@ -11,8 +11,8 @@ public class Dialogue : MonoBehaviour {
 
     public void addMessage(string msg)
     {
-        print("DIALOGE: got message " + msg);
-        print("count is " + messages.Count);
+        //print("DIALOGE: got message " + msg);
+        //print("count is " + messages.Count);
         if (messages.Count == 0)
         {
             mText.text = msg;
@@ -26,14 +26,14 @@ public class Dialogue : MonoBehaviour {
         if (messages.Count > 1)
         {
             string next = messages[1];
-            print("swapping to " + next);
+            //print("swapping to " + next);
             mText.text = next;
             messages.RemoveAt(0);
         }
 
         else
         {
-            print("close dialogue");
+            //print("close dialogue");
             gameObject.SetActive(false);
             //transform.gameObject.SetActive(false);
         }

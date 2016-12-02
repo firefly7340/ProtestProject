@@ -30,7 +30,7 @@ public class UIManager : MonoBehaviour {
 
     public void addDialogue(string message)
     {
-        print("got messages to add " + message);
+        //print("got messages to add " + message);
         //print("adding message " + message);
         mDialogue.addMessage(message);
         dialogueCanvas.gameObject.SetActive(true);
