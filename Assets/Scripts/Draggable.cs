@@ -5,12 +5,18 @@ using System;
 
 public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
+
+    public Transform parentToReturnTo = null;
+
     public void OnBeginDrag(PointerEventData eventData)
     {
         //throw new NotImplementedException();
+        parentToReturnTo = this.transform.parent;
 
         //remove from parent
         this.transform.SetParent(this.transform.parent.parent);
+
+        GetComponent<CanvasGroup>().blocksRaycasts = false;
     }
 
     public void OnDrag(PointerEventData eventData)
@@ -23,6 +29,9 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
 
     public void OnEndDrag(PointerEventData eventData)
     {
-       // throw new NotImplementedException();
+        // throw new NotImplementedException();
+        this.transform.parent = parentToReturnTo;
+
+        GetComponent<CanvasGroup>().blocksRaycasts = true;
     }
 }

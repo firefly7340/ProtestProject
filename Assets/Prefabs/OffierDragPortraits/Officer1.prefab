@@ -23,6 +23,7 @@ GameObject:
   - 114: {fileID: 114000012555162348}
   - 114: {fileID: 114000010718037118}
   - 114: {fileID: 114000011437141266}
+  - 225: {fileID: 225000010296972288}
   m_Layer: 5
   m_Name: Officer1
   m_TagString: Untagged
@@ -41,6 +42,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a460ca8bda460146b55529ea19c769e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  parentToReturnTo: {fileID: 0}
 --- !u!114 &114000011437141266
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -110,3 +112,14 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 128, y: 128}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!225 &225000010296972288
+CanvasGroup:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011633750142}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
