@@ -12,6 +12,8 @@ public class GameManager : MonoBehaviour {
     private float situationValue;
     private float cityStatusValue;
 
+    private int curDay = 0;
+
 	// Use this for initialization
 	void Start () {
         publicPerceptionValue = 0.0f;
@@ -33,6 +35,17 @@ public class GameManager : MonoBehaviour {
         print("starting the day");
 
         uiManager.closeUI();
+
+        if(curDay == 0)
+        {
+            print("sending messages");
+            uiManager.addDialogue("dawn of the first day");
+            uiManager.addDialogue("Test seccond message");
+            uiManager.addDialogue("Test third message");
+        }
+
+        //get the current officer assignments
+
     }
 
     public float getPublicPerceptionValue()

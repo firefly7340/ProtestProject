@@ -8,6 +8,9 @@ public class UIManager : MonoBehaviour {
     public Canvas landlineCanvas;
     public Canvas cellphoneCanvas;
     public Canvas officerAssignCanvas;
+    public Canvas dialogueCanvas;
+
+    private Dialogue mDialogue;
 
     //bool inUse = true;
 
@@ -20,6 +23,17 @@ public class UIManager : MonoBehaviour {
         landlineCanvas.gameObject.SetActive(false);
         cellphoneCanvas.gameObject.SetActive(false);
         officerAssignCanvas.gameObject.SetActive(false);
+        dialogueCanvas.gameObject.SetActive(false);
+
+        mDialogue = dialogueCanvas.GetComponent<Dialogue>();
+    }
+
+    public void addDialogue(string message)
+    {
+        print("got messages to add " + message);
+        //print("adding message " + message);
+        mDialogue.addMessage(message);
+        dialogueCanvas.gameObject.SetActive(true);
     }
 
     private bool inUse()
@@ -27,8 +41,10 @@ public class UIManager : MonoBehaviour {
         //return newspaperCanvas.gameObject.active;
         return newspaperCanvas.isActiveAndEnabled || twitterCanvas.isActiveAndEnabled ||
             landlineCanvas.isActiveAndEnabled || cellphoneCanvas.isActiveAndEnabled
-            || officerAssignCanvas.isActiveAndEnabled;
+            || officerAssignCanvas.isActiveAndEnabled || dialogueCanvas.isActiveAndEnabled;
     }
+
+
 
     public void closeUI()
     {
